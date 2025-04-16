@@ -7,3 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('createUser',[UsersController::class, 'createUser']);
 Route::get('getUsers',[UsersController::class,'listUsers']);
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'Healthy',
+        'timestamp' => now(),
+    ], 200); 
+});
